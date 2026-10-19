@@ -8,9 +8,9 @@ export function ProjectGrid({ projects }: { projects: Project[] }) {
   }
 
   return (
-    <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <ul className="grid grid-cols-[repeat(auto-fit,minmax(min(300px,100%),1fr))] gap-6">
       {projects.map((project) => (
-        <li key={project.slug}>
+        <li key={project.slug} className="flex">
           <ProjectCard project={project} />
         </li>
       ))}

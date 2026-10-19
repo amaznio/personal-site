@@ -1,28 +1,21 @@
-export type SocialLink = {
-  label: string;
-  href: string;
-};
+import { profile } from "./profile";
 
 export type NavItem = {
   label: string;
   href: string;
 };
 
+/** Canonical origin. Override with NEXT_PUBLIC_SITE_URL (e.g. for local dev) (no trailing slash). */
+const url = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://adrianmaznio.com").replace(/\/$/, "");
+
 export const siteConfig = {
-  name: "Adrian",
-  title: "Adrian — Developer",
-  description: "Personal site and project showcase.",
-  tagline: "I build small, fun things for the web.",
-  about: [
-    "Hi! I'm a developer who enjoys turning ideas into simple, delightful products.",
-    "When I'm not coding you'll probably find me exploring new tools, tinkering with side projects, or looking for the best coffee in town.",
-  ],
+  url,
+  name: profile.name,
+  title: `${profile.name} — ${profile.role}`,
+  description: `${profile.name} is a ${profile.role.toLowerCase()} who builds small, fun things for the web. Browse projects and get in touch.`,
   nav: [
     { label: "Projects", href: "#projects" },
     { label: "About", href: "#about" },
+    { label: "Contact", href: "#contact" },
   ] satisfies NavItem[],
-  socials: [
-    { label: "GitHub", href: "https://github.com/" },
-    { label: "Email", href: "mailto:adrianmaznio@gmail.com" },
-  ] satisfies SocialLink[],
 } as const;

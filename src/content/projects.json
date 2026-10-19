@@ -1,26 +1,11 @@
 [
   {
-    "slug": "weather-wizard",
-    "title": "Weather Wizard",
-    "description": "A tiny forecast app that tells you whether you need an umbrella, with a sprinkle of sarcasm.",
-    "image": "/projects/weather-wizard.svg",
-    "url": "https://example.com/weather-wizard",
-    "tags": ["Next.js", "API"]
-  },
-  {
-    "slug": "pixel-pantry",
-    "title": "Pixel Pantry",
-    "description": "Recipe finder that builds meals from whatever is left in your fridge.",
-    "image": "/projects/pixel-pantry.svg",
-    "url": "https://example.com/pixel-pantry",
-    "tags": ["React", "Tailwind"]
-  },
-  {
-    "slug": "habit-hopper",
-    "title": "Habit Hopper",
-    "description": "Gamified habit tracker where streaks grow a little frog garden.",
-    "image": "/projects/habit-hopper.svg",
-    "url": "https://example.com/habit-hopper",
-    "tags": ["TypeScript", "PWA"]
+    "slug": "forsaken-seas",
+    "title": "Forsaken Seas",
+    "description": "A browser naval tactics game where you plan four moves a turn, lock in, and watch the fleets clash. Out-manoeuvre rival sloops, dodge reefs and wind, or hunt sea monsters for treasure.",
+    "image": "/projects/pirate-game.gif",
+    "url": "https://pirate.adrianmaznio.com",
+    "tags": ["Phaser", "React", "TypeScript", "Socket.IO"],
+    "sourceUrl": "https://github.com/amaznio/pirate-game"
   }
 ]

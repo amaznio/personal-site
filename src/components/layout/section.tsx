@@ -1,25 +1,29 @@
 import type { ReactNode } from "react";
 
+import { MonoLabel } from "@/components/ui-extras/mono-label";
 import { cn } from "@/lib/utils";
+
+import { Container } from "./container";
 
 type SectionProps = {
   id: string;
   title: string;
-  subtitle?: string;
+  /** Short mono label shown on the right of the heading, e.g. "6 selected". */
+  meta?: string;
   className?: string;
   children: ReactNode;
 };
 
-export function Section({ id, title, subtitle, className, children }: SectionProps) {
+export function Section({ id, title, meta, className, children }: SectionProps) {
   return (
-    <section id={id} className={cn("scroll-mt-20 py-16", className)}>
-      <div className="mb-8 space-y-1">
-        <h2 className="font-heading text-2xl font-semibold tracking-tight sm:text-3xl">
-          {title}
-        </h2>
-        {subtitle && <p className="text-muted-foreground">{subtitle}</p>}
-      </div>
-      {children}
+    <section id={id} className={cn("pb-28", className)}>
+      <Container className="flex flex-col gap-8">
+        <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2 border-t pt-8">
+          <h2 className="font-heading text-3xl font-bold tracking-tight">{title}</h2>
+          {meta && <MonoLabel>{meta}</MonoLabel>}
+        </div>
+        {children}
+      </Container>
     </section>
   );
 }

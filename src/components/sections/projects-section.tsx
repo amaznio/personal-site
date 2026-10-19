@@ -6,7 +6,7 @@ export async function ProjectsSection({ repository }: { repository: ProjectRepos
   const projects = await repository.getAll();
 
   return (
-    <Section id="projects" title="Projects" subtitle="A few things I've built and shipped.">
+    <Section id="projects" title="Projects">
       <ProjectGrid projects={projects} />
     </Section>
   );

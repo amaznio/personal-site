@@ -1,29 +1,32 @@
 import Link from "next/link";
 
 import { ThemeToggle } from "@/components/theme/theme-toggle";
+import { profile } from "@/config/profile";
 import { siteConfig } from "@/config/site";
+
+import { Container } from "./container";
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-40 border-b bg-background/80 backdrop-blur">
-      <div className="mx-auto flex h-14 max-w-5xl items-center justify-between px-4">
-        <Link href="/" className="font-heading text-lg font-semibold tracking-tight">
-          {siteConfig.name}
+    <header>
+      <Container className="flex flex-wrap items-center justify-between gap-x-6 gap-y-2 py-4">
+        <Link href="#top" className="py-3 text-lg font-bold tracking-tight">
+          {profile.name.split(" ")[0]}
           <span className="text-primary">.</span>
         </Link>
-        <nav className="flex items-center gap-1">
+        <nav className="flex flex-wrap items-center gap-x-2">
           {siteConfig.nav.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-md px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
+              className="p-3 text-[15px] font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
               {item.label}
             </Link>
           ))}
           <ThemeToggle />
         </nav>
-      </div>
+      </Container>
     </header>
   );
 }

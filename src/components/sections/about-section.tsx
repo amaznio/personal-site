@@ -1,16 +1,21 @@
 import { Section } from "@/components/layout/section";
-import { SocialLinks } from "@/components/layout/social-links";
-import { siteConfig } from "@/config/site";
+import { DefinitionList } from "@/components/ui-extras/definition-list";
+import { profile } from "@/config/profile";
 
 export function AboutSection() {
+  const { about, facts } = profile;
+
   return (
-    <Section id="about" title="About me">
-      <div className="max-w-2xl space-y-4 text-muted-foreground">
-        {siteConfig.about.map((paragraph) => (
-          <p key={paragraph}>{paragraph}</p>
-        ))}
+    <Section id="about" title="About">
+      <div className="flex max-w-[620px] flex-col gap-5">
+        <p className="text-xl leading-[1.55]">{about.lead}</p>
+        <p className="text-[17px] leading-[1.6] text-secondary-foreground">{about.body}</p>
+        {facts.length > 0 && (
+          <div className="mt-2">
+            <DefinitionList items={facts} />
+          </div>
+        )}
       </div>
-      <SocialLinks className="mt-6 font-medium text-foreground" />
     </Section>
   );
 }
